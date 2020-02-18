@@ -67,6 +67,7 @@ extension ViaplaySectionsController: UITableViewDelegate, UITableViewDataSource 
         guard let categoriesController = viaplayCategoriesController else { return }
 
         categoriesController.urlcategoryService = sectionsViaplayViewModel.sectionsViaplay[indexPath.row].urlSection
+        categoriesController.currentSectionTitle = sectionsViaplayViewModel.sectionsViaplay[indexPath.row].title
 
         self.present(categoriesController, animated: true, completion: nil)
     }

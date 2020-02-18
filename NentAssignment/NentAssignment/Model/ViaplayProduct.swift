@@ -6,40 +6,10 @@
 //  Copyright © 2020 Esteban Pavez. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-// MARK: - ViaplayBlock
-struct ViaplayBlock: Decodable {
-    var embedded: ViaplayBlockEmbedded?
-}
-
-// MARK: - ViaplayBlockEmbedded
-struct ViaplayBlockEmbedded: Decodable {
-    var viaplayProducts: [ViaplayProduct]?
-}
-
-// MARK: - ViaplayProduct
-struct ViaplayProduct: Decodable {
-    var content: ViaplayProductContent?
-}
-
-// MARK: - Content
-struct ViaplayProductContent: Decodable {
-    var images: ViaplayProductImages?
-    var series: ViaplayProductSeries?
-}
-
-// MARK: - Images
-struct ViaplayProductImages: Decodable {
-    var boxart: ViaplayProductBoxart?
-}
-
-// MARK: - Boxart
-struct ViaplayProductBoxart: Decodable {
-    var url: String?
-}
-
-// MARK: - Series
-struct ViaplayProductSeries: Decodable {
-    var title, synopsis: String?
+struct ViaplayProduct {
+    var title: String!
+    var synopsis: String!
+    var imageBoxArt: UIImage!
 }

@@ -25,6 +25,9 @@
 		1DB8ECBB23FBFDAA00CA48D4 /* ViaplaySectionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECBA23FBFDAA00CA48D4 /* ViaplaySectionsViewModel.swift */; };
 		1DB8ECBE23FC04FB00CA48D4 /* ViaplaySectionsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECBD23FC04FB00CA48D4 /* ViaplaySectionsTableCell.swift */; };
 		1DB8ECC023FC3A2E00CA48D4 /* ViaplayCategoriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECBF23FC3A2E00CA48D4 /* ViaplayCategoriesController.swift */; };
+		1DB8ECC423FC6B3500CA48D4 /* ViaplayProductsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECC323FC6B3500CA48D4 /* ViaplayProductsController.swift */; };
+		1DB8ECC623FC6C4400CA48D4 /* ViaplayProductTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECC523FC6C4400CA48D4 /* ViaplayProductTableCell.swift */; };
+		1DB8ECC823FC70D800CA48D4 /* ViaplayProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECC723FC70D800CA48D4 /* ViaplayProductsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +63,9 @@
 		1DB8ECBA23FBFDAA00CA48D4 /* ViaplaySectionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViaplaySectionsViewModel.swift; sourceTree = "<group>"; };
 		1DB8ECBD23FC04FB00CA48D4 /* ViaplaySectionsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViaplaySectionsTableCell.swift; sourceTree = "<group>"; };
 		1DB8ECBF23FC3A2E00CA48D4 /* ViaplayCategoriesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViaplayCategoriesController.swift; sourceTree = "<group>"; };
+		1DB8ECC323FC6B3500CA48D4 /* ViaplayProductsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViaplayProductsController.swift; sourceTree = "<group>"; };
+		1DB8ECC523FC6C4400CA48D4 /* ViaplayProductTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViaplayProductTableCell.swift; sourceTree = "<group>"; };
+		1DB8ECC723FC70D800CA48D4 /* ViaplayProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViaplayProductsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +147,8 @@
 				1DB8EC8623FB205900CA48D4 /* ViaplaySectionsController.swift */,
 				1DB8ECBD23FC04FB00CA48D4 /* ViaplaySectionsTableCell.swift */,
 				1DB8ECBF23FC3A2E00CA48D4 /* ViaplayCategoriesController.swift */,
+				1DB8ECC323FC6B3500CA48D4 /* ViaplayProductsController.swift */,
+				1DB8ECC523FC6C4400CA48D4 /* ViaplayProductTableCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -149,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				1DB8ECBA23FBFDAA00CA48D4 /* ViaplaySectionsViewModel.swift */,
+				1DB8ECC723FC70D800CA48D4 /* ViaplayProductsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -283,13 +292,16 @@
 			files = (
 				1DB8EC8723FB205900CA48D4 /* ViaplaySectionsController.swift in Sources */,
 				1DB8ECAE23FB400500CA48D4 /* UtilServices.swift in Sources */,
+				1DB8ECC823FC70D800CA48D4 /* ViaplayProductsViewModel.swift in Sources */,
 				1DB8ECC023FC3A2E00CA48D4 /* ViaplayCategoriesController.swift in Sources */,
+				1DB8ECC423FC6B3500CA48D4 /* ViaplayProductsController.swift in Sources */,
 				1DB8ECAB23FB3F9200CA48D4 /* GetSectionsViaPlay.swift in Sources */,
 				1DB8ECBB23FBFDAA00CA48D4 /* ViaplaySectionsViewModel.swift in Sources */,
 				1DB8ECB923FBF91100CA48D4 /* ViaplayProduct.swift in Sources */,
 				1DB8EC8323FB205900CA48D4 /* AppDelegate.swift in Sources */,
 				1DB8ECB123FB403900CA48D4 /* Constants.swift in Sources */,
 				1DB8EC8523FB205900CA48D4 /* SceneDelegate.swift in Sources */,
+				1DB8ECC623FC6C4400CA48D4 /* ViaplayProductTableCell.swift in Sources */,
 				1DB8ECB723FBF8EE00CA48D4 /* ViaplaySection.swift in Sources */,
 				1DB8ECA923FB3F2800CA48D4 /* URLServices.swift in Sources */,
 				1DB8ECBE23FC04FB00CA48D4 /* ViaplaySectionsTableCell.swift in Sources */,

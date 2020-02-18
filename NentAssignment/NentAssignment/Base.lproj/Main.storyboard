@@ -33,14 +33,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Section title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTK-N0-x4e">
-                                                    <rect key="frame" x="15" y="8" width="352" height="37"/>
+                                                    <rect key="frame" x="15" y="8" width="352" height="36"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HiraginoSans-W7" family="Hiragino Sans" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ydP-5n-gB4">
-                                                    <rect key="frame" x="15" y="34" width="229" height="30"/>
+                                                    <rect key="frame" x="15" y="34" width="229" height="29"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -49,7 +49,7 @@
                                                     <size key="shadowOffset" width="1" height="1"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrowtriangle.right.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="8Fb-h2-2Nd">
-                                                    <rect key="frame" x="288" y="22" width="79" height="28"/>
+                                                    <rect key="frame" x="288" y="21" width="79" height="29"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
@@ -99,10 +99,10 @@
             </objects>
             <point key="canvasLocation" x="68" y="114.69265367316342"/>
         </scene>
-        <!--View Controller-->
+        <!--Viaplay Products Controller-->
         <scene sceneID="FEF-mx-oHx">
             <objects>
-                <viewController id="34t-8s-WCb" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="viaplayProductsController" id="34t-8s-WCb" customClass="ViaplayProductsController" customModule="NentAssignment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ru9-fA-gt6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -117,11 +117,14 @@
                                 <fontDescription key="fontDescription" name="HiraginoSans-W7" family="Hiragino Sans" pointSize="17"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title=" Back" image="arrowtriangle.left.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="closeView:" destination="34t-8s-WCb" eventType="touchUpInside" id="0c7-PT-lmI"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="List of content of the section" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ECi-Yj-eBc">
                                 <rect key="frame" x="16" y="115" width="343" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W7" family="Hiragino Sans" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W7" family="Hiragino Sans" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -136,32 +139,19 @@
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" alwaysBounceVertical="YES" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EMO-OI-mQV">
-                                <rect key="frame" x="0.0" y="234" width="375" height="432"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" alwaysBounceVertical="YES" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EMO-OI-mQV">
+                                <rect key="frame" x="0.0" y="235" width="375" height="432"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.13365915419999999" green="0.17643710970000001" blue="0.20086154340000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="147" id="mdc-Qt-6Xn">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="147"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="viaplayProductTableCell" rowHeight="150" id="mdc-Qt-6Xn" customClass="ViaplayProductTableCell" customModule="NentAssignment" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mdc-Qt-6Xn" id="ZkO-N6-UyR">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="147"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="synopsis" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ss9-6X-bI7">
-                                                    <rect key="frame" x="15" y="71" width="215" height="65"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="14"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <size key="shadowOffset" width="1" height="1"/>
-                                                </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RTa-8g-Bom">
-                                                    <rect key="frame" x="235" y="9" width="133" height="127"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Nxz-bO-4vP">
                                                     <rect key="frame" x="15" y="23" width="215" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -171,9 +161,27 @@
                                                     <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <size key="shadowOffset" width="1" height="1"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="synopsis" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ss9-6X-bI7">
+                                                    <rect key="frame" x="15" y="74" width="215" height="64"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="14"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <size key="shadowOffset" width="1" height="1"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RTa-8g-Bom">
+                                                    <rect key="frame" x="234" y="10" width="133" height="126"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="imgBoxArt" destination="RTa-8g-Bom" id="Wcu-1b-IcQ"/>
+                                            <outlet property="lblSynopsis" destination="Ss9-6X-bI7" id="uhQ-Vm-eNY"/>
+                                            <outlet property="lblTitleProduct" destination="Nxz-bO-4vP" id="Q55-xI-zQt"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <userDefinedRuntimeAttributes>
@@ -181,16 +189,20 @@
                                         <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dataSource" destination="34t-8s-WCb" id="p4y-0z-jZW"/>
+                                    <outlet property="delegate" destination="34t-8s-WCb" id="LFQ-11-0HH"/>
+                                </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wns-58-ROE">
-                                <rect key="frame" x="67" y="230" width="240" height="1"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.13365915419999999" green="0.17643710970000001" blue="0.20086154340000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Bmw-FF-kNx"/>
                     </view>
+                    <connections>
+                        <outlet property="lblDescriptionViaplay" destination="eOp-cb-Usa" id="BRA-gQ-0FM"/>
+                        <outlet property="lblTitleViaplay" destination="ECi-Yj-eBc" id="tQN-Lx-54S"/>
+                        <outlet property="tableViewProducts" destination="EMO-OI-mQV" id="0Bi-yk-bll"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dMh-Un-JIp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -211,7 +223,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title Type of section" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YJQ-Sc-fM0">
                                 <rect key="frame" x="16" y="115" width="343" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W7" family="Hiragino Sans" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W7" family="Hiragino Sans" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -237,7 +249,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" alwaysBounceVertical="YES" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EWz-CN-6UG">
-                                <rect key="frame" x="-1" y="235" width="375" height="432"/>
+                                <rect key="frame" x="0.0" y="235" width="375" height="432"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.13365915419999999" green="0.17643710970000001" blue="0.20086154340000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -250,14 +262,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Section title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxn-8S-Rcc">
-                                                    <rect key="frame" x="15" y="8" width="352" height="37"/>
+                                                    <rect key="frame" x="15" y="8" width="352" height="36"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HiraginoSans-W7" family="Hiragino Sans" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="uJg-tv-lsn">
-                                                    <rect key="frame" x="15" y="34" width="229" height="30"/>
+                                                    <rect key="frame" x="15" y="34" width="229" height="29"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -266,7 +278,7 @@
                                                     <size key="shadowOffset" width="1" height="1"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrowtriangle.right.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="TZW-6d-utq">
-                                                    <rect key="frame" x="288" y="22" width="78" height="28"/>
+                                                    <rect key="frame" x="287" y="21" width="79" height="29"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
@@ -296,7 +308,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zgk-NH-9Li" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="794" y="115"/>
+            <point key="canvasLocation" x="792.79999999999995" y="114.69265367316342"/>
         </scene>
     </scenes>
     <resources>

@@ -2,6 +2,8 @@
 //  ViaplaySectionsTableCell.swift
 //  NentAssignment
 //
+//  Table view cell with the information of the section selected
+//
 //  Created by Esteban Pavez on 2020-02-18.
 //  Copyright © 2020 Esteban Pavez. All rights reserved.
 //

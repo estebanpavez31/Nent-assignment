@@ -2,6 +2,8 @@
 //  ViaplayCategoriesController.swift
 //  NentAssignment
 //
+//  Controller with the information of the categories related to the section selected
+//
 //  Created by Esteban Pavez on 2020-02-18.
 //  Copyright © 2020 Esteban Pavez. All rights reserved.
 //
@@ -20,6 +22,8 @@ class ViaplayCategoriesController: UIViewController {
     var categoriesViaplayViewModel: ViaplaySectionsViewModel!
     /// URL to call the service to obtain the list of categories in the section selected
     var urlcategoryService: String!
+    /// Title with the section selected
+    var currentSectionTitle: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +39,7 @@ class ViaplayCategoriesController: UIViewController {
 
     /// Function that sets the data into the scene
     func fillUI() {
-        lblTitleViaplay.text = categoriesViaplayViewModel.titleViaplay
+        lblTitleViaplay.text = currentSectionTitle
         lblDescriptionViaplay.text = categoriesViaplayViewModel.descriptionViaplay
     }
 
@@ -68,11 +72,12 @@ extension ViaplayCategoriesController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyBoard: UIStoryboard = UIStoryboard(name: Constants.Storyboard.main, bundle: nil)
         let viaplayCategoriesController = storyBoard.instantiateViewController(withIdentifier:
-            Constants.Controller.viaplayCategoriesController) as? ViaplayCategoriesController
+            Constants.Controller.viaplayProductsController) as? ViaplayProductsController
 
         guard let categoriesController = viaplayCategoriesController else { return }
 
-        categoriesController.urlcategoryService = categoriesViaplayViewModel.sectionsViaplay[indexPath.row].urlSection
+        categoriesController.urlcategoryService = categoriesViaplayViewModel.categoriesViaplay[indexPath.row].urlSection
+        categoriesController.currentSectionTitle = categoriesViaplayViewModel.categoriesViaplay[indexPath.row].title
 
         self.present(categoriesController, animated: true, completion: nil)
     }

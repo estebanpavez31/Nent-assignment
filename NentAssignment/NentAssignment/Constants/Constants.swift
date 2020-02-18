@@ -20,15 +20,22 @@ struct Constants {
     }
 
     struct Table {
+        /// Id of the section table view cell
         static let cellSection = "viaplaySectionsTableCell"
+        /// Id of the product table view cell
+        static let cellProduct = "viaplayProductTableCell"
     }
 
     struct Storyboard {
+        /// Id of the storyboard Main
         static let main = "Main"
     }
 
     struct Controller {
+        /// id of the controller ViaplayCategoriesController
         static let viaplayCategoriesController = "viaplayCategoriesController"
+        /// id of the controller ViaplayProductsController
+        static let viaplayProductsController = "viaplayProductsController"
     }
 
 }
