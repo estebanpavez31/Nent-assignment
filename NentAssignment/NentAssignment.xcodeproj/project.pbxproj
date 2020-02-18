@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		1DB8EC8323FB205900CA48D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8EC8223FB205900CA48D4 /* AppDelegate.swift */; };
 		1DB8EC8523FB205900CA48D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8EC8423FB205900CA48D4 /* SceneDelegate.swift */; };
-		1DB8EC8723FB205900CA48D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8EC8623FB205900CA48D4 /* ViewController.swift */; };
+		1DB8EC8723FB205900CA48D4 /* ViaplaySectionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8EC8623FB205900CA48D4 /* ViaplaySectionsController.swift */; };
 		1DB8EC8A23FB205900CA48D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DB8EC8823FB205900CA48D4 /* Main.storyboard */; };
 		1DB8EC8C23FB205C00CA48D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DB8EC8B23FB205C00CA48D4 /* Assets.xcassets */; };
 		1DB8EC8F23FB205C00CA48D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DB8EC8D23FB205C00CA48D4 /* LaunchScreen.storyboard */; };
@@ -19,7 +19,11 @@
 		1DB8ECAE23FB400500CA48D4 /* UtilServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECAD23FB400500CA48D4 /* UtilServices.swift */; };
 		1DB8ECB123FB403900CA48D4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECB023FB403900CA48D4 /* Constants.swift */; };
 		1DB8ECB323FB406F00CA48D4 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECB223FB406F00CA48D4 /* Logger.swift */; };
-		1DB8ECB523FB40BF00CA48D4 /* SectionsViaplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECB423FB40BF00CA48D4 /* SectionsViaplay.swift */; };
+		1DB8ECB523FB40BF00CA48D4 /* SectionsViaplayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECB423FB40BF00CA48D4 /* SectionsViaplayModel.swift */; };
+		1DB8ECB723FBF8EE00CA48D4 /* ViaplaySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECB623FBF8EE00CA48D4 /* ViaplaySection.swift */; };
+		1DB8ECB923FBF91100CA48D4 /* ViaplayProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECB823FBF91100CA48D4 /* ViaplayProduct.swift */; };
+		1DB8ECBB23FBFDAA00CA48D4 /* ViaplaySectionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECBA23FBFDAA00CA48D4 /* ViaplaySectionsViewModel.swift */; };
+		1DB8ECBE23FC04FB00CA48D4 /* ViaplaySectionsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECBD23FC04FB00CA48D4 /* ViaplaySectionsTableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +40,7 @@
 		1DB8EC7F23FB205900CA48D4 /* NentAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NentAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DB8EC8223FB205900CA48D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DB8EC8423FB205900CA48D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1DB8EC8623FB205900CA48D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1DB8EC8623FB205900CA48D4 /* ViaplaySectionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViaplaySectionsController.swift; sourceTree = "<group>"; };
 		1DB8EC8923FB205900CA48D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1DB8EC8B23FB205C00CA48D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DB8EC8E23FB205C00CA48D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,7 +53,11 @@
 		1DB8ECAD23FB400500CA48D4 /* UtilServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilServices.swift; sourceTree = "<group>"; };
 		1DB8ECB023FB403900CA48D4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1DB8ECB223FB406F00CA48D4 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
-		1DB8ECB423FB40BF00CA48D4 /* SectionsViaplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsViaplay.swift; sourceTree = "<group>"; };
+		1DB8ECB423FB40BF00CA48D4 /* SectionsViaplayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsViaplayModel.swift; sourceTree = "<group>"; };
+		1DB8ECB623FBF8EE00CA48D4 /* ViaplaySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViaplaySection.swift; sourceTree = "<group>"; };
+		1DB8ECB823FBF91100CA48D4 /* ViaplayProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViaplayProduct.swift; sourceTree = "<group>"; };
+		1DB8ECBA23FBFDAA00CA48D4 /* ViaplaySectionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViaplaySectionsViewModel.swift; sourceTree = "<group>"; };
+		1DB8ECBD23FC04FB00CA48D4 /* ViaplaySectionsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViaplaySectionsTableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +107,6 @@
 				1DB8ECA523FB20A800CA48D4 /* View */,
 				1DB8EC8223FB205900CA48D4 /* AppDelegate.swift */,
 				1DB8EC8423FB205900CA48D4 /* SceneDelegate.swift */,
-				1DB8EC8623FB205900CA48D4 /* ViewController.swift */,
 				1DB8EC8823FB205900CA48D4 /* Main.storyboard */,
 				1DB8EC8B23FB205C00CA48D4 /* Assets.xcassets */,
 				1DB8EC8D23FB205C00CA48D4 /* LaunchScreen.storyboard */,
@@ -129,6 +136,8 @@
 		1DB8ECA523FB20A800CA48D4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1DB8EC8623FB205900CA48D4 /* ViaplaySectionsController.swift */,
+				1DB8ECBD23FC04FB00CA48D4 /* ViaplaySectionsTableCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -136,6 +145,7 @@
 		1DB8ECA623FB20B000CA48D4 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				1DB8ECBA23FBFDAA00CA48D4 /* ViaplaySectionsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -143,7 +153,9 @@
 		1DB8ECA723FB20B800CA48D4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1DB8ECB423FB40BF00CA48D4 /* SectionsViaplay.swift */,
+				1DB8ECB423FB40BF00CA48D4 /* SectionsViaplayModel.swift */,
+				1DB8ECB623FBF8EE00CA48D4 /* ViaplaySection.swift */,
+				1DB8ECB823FBF91100CA48D4 /* ViaplayProduct.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -266,15 +278,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DB8EC8723FB205900CA48D4 /* ViewController.swift in Sources */,
+				1DB8EC8723FB205900CA48D4 /* ViaplaySectionsController.swift in Sources */,
 				1DB8ECAE23FB400500CA48D4 /* UtilServices.swift in Sources */,
 				1DB8ECAB23FB3F9200CA48D4 /* GetSectionsViaPlay.swift in Sources */,
+				1DB8ECBB23FBFDAA00CA48D4 /* ViaplaySectionsViewModel.swift in Sources */,
+				1DB8ECB923FBF91100CA48D4 /* ViaplayProduct.swift in Sources */,
 				1DB8EC8323FB205900CA48D4 /* AppDelegate.swift in Sources */,
 				1DB8ECB123FB403900CA48D4 /* Constants.swift in Sources */,
 				1DB8EC8523FB205900CA48D4 /* SceneDelegate.swift in Sources */,
+				1DB8ECB723FBF8EE00CA48D4 /* ViaplaySection.swift in Sources */,
 				1DB8ECA923FB3F2800CA48D4 /* URLServices.swift in Sources */,
+				1DB8ECBE23FC04FB00CA48D4 /* ViaplaySectionsTableCell.swift in Sources */,
 				1DB8ECB323FB406F00CA48D4 /* Logger.swift in Sources */,
-				1DB8ECB523FB40BF00CA48D4 /* SectionsViaplay.swift in Sources */,
+				1DB8ECB523FB40BF00CA48D4 /* SectionsViaplayModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

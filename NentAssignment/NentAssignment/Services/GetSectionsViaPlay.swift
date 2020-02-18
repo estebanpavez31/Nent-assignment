@@ -17,7 +17,7 @@ class GetSectionsViaPlay: NSObject, URLSessionDelegate {
 
     /// Call the service via a HTTP GET request and get the json with the data of the Sections
     /// - Parameter onCompletion: Sections object with its data
-    func getSections(onCompletion: @escaping (SectionsViaplay?) -> Void) {
+    func getSections(onCompletion: @escaping (SectionsViaplayModel?) -> Void) {
         let baseURL = URLServices.urlAPIViaPlay
 
         let urlComponents = URLComponents(string: baseURL)!
@@ -31,7 +31,7 @@ class GetSectionsViaPlay: NSObject, URLSessionDelegate {
 
     /// Parse JSON obtained from service call to transform it to a Sections Object
     /// - Parameter data: Data with json response
-    func parsingJSON(data: Data?) -> SectionsViaplay? {
+    func parsingJSON(data: Data?) -> SectionsViaplayModel? {
         guard data != nil else {
             return nil
         }
@@ -40,7 +40,7 @@ class GetSectionsViaPlay: NSObject, URLSessionDelegate {
         decoder.keyDecodingStrategy = .convertFromSnakeCase
 
         do {
-            let sections = try decoder.decode(SectionsViaplay.self, from: data ?? Data())
+            let sections = try decoder.decode(SectionsViaplayModel.self, from: data ?? Data())
 
             Logger.log("Parsing Sections Succeded")
 
