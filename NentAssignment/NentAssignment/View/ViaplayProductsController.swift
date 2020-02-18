@@ -2,7 +2,7 @@
 //  ViaplayProductsController.swift
 //  NentAssignment
 //
-//  
+//  Controller with the list of products of the selected category
 //
 //  Created by Esteban Pavez on 2020-02-18.
 //  Copyright © 2020 Esteban Pavez. All rights reserved.

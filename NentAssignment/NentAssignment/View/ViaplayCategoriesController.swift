@@ -39,7 +39,7 @@ class ViaplayCategoriesController: UIViewController {
 
     /// Function that sets the data into the scene
     func fillUI() {
-        lblTitleViaplay.text = currentSectionTitle
+        lblTitleViaplay.text = categoriesViaplayViewModel.titleViaplay
         lblDescriptionViaplay.text = categoriesViaplayViewModel.descriptionViaplay
     }
 
