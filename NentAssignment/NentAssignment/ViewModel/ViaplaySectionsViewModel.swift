@@ -12,14 +12,15 @@ import Foundation
 
 struct ViaplaySectionsViewModel {
     var sectionsViaplay = [ViaplaySection]()
+    var categoriesViaplay = [ViaplaySection]()
     var titleViaplay: String!
     var descriptionViaplay: String!
 
     init(sections: SectionsViaplayModel) {
         setHeaderData(sections: sections)
         setViaplaySections(sections: sections)
+        setViaplayCategories(sections: sections)
     }
-
 
     /// Set the data on the header of the scene, over the list of sections
     /// - Parameter sections: Model with the response of the service with the info of Viaplay
@@ -36,9 +37,31 @@ struct ViaplaySectionsViewModel {
     /// - Parameter sections: Model with the response of the service with the info of Viaplay
     mutating func setViaplaySections(sections: SectionsViaplayModel) {
         if let sectionsLinks = sections.links {
-            if let sectionsCategories = sectionsLinks.viaplaySections {
-                sectionsViaplay = sectionsCategories
+            if let sectionsViaplay = sectionsLinks.viaplaySections {
+                self.sectionsViaplay = sectionsViaplay
+
+                for (index, section) in self.sectionsViaplay.enumerated() {
+                    guard let sectionUrl = section.urlSection else { continue }
+                    self.sectionsViaplay[index].urlSection = sectionUrl.replacingOccurrences(of: "{?dtg}", with: "")
+                }
+
             }
         }
     }
+
+    /// Set the data of with the categories list
+    /// - Parameter sections: Model with the response of the service with the info of Viaplay
+    mutating func setViaplayCategories(sections: SectionsViaplayModel) {
+        if let sectionsLinks = sections.links {
+            if let categoriesViaplay = sectionsLinks.viaplayCategoryFilters {
+                self.categoriesViaplay = categoriesViaplay
+
+                for (index, section) in self.categoriesViaplay.enumerated() {
+                    guard let sectionUrl = section.urlSection else { continue }
+                    self.categoriesViaplay[index].urlSection = sectionUrl.replacingOccurrences(of: "{?dtg}", with: "")
+                }
+            }
+        }
+    }
+
 }

@@ -17,8 +17,9 @@ class GetSectionsViaPlay: NSObject, URLSessionDelegate {
 
     /// Call the service via a HTTP GET request and get the json with the data of the Sections
     /// - Parameter onCompletion: Sections object with its data
-    func getSections(onCompletion: @escaping (SectionsViaplayModel?) -> Void) {
-        let baseURL = URLServices.urlAPIViaPlay
+    func getSections(urlService: String = URLServices.urlAPIViaPlay,
+                     onCompletion: @escaping (SectionsViaplayModel?) -> Void) {
+        let baseURL = urlService
 
         let urlComponents = URLComponents(string: baseURL)!
 

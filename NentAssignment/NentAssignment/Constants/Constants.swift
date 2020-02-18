@@ -14,9 +14,21 @@ struct Constants {
 
     struct Services {
         /// Max time out that will take to call the services in seconds
-        static var timeOut = Double(15)
+        static let timeOut = Double(15)
         /// HTTP status code of a successful call
-        static var statusCodeSuccess = 200
+        static let statusCodeSuccess = 200
+    }
+
+    struct Table {
+        static let cellSection = "viaplaySectionsTableCell"
+    }
+
+    struct Storyboard {
+        static let main = "Main"
+    }
+
+    struct Controller {
+        static let viaplayCategoriesController = "viaplayCategoriesController"
     }
 
 }

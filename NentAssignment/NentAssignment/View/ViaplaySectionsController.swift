@@ -1,6 +1,8 @@
 //
-//  ViewController.swift
+//  ViaplaySectionsController.swift
 //  NentAssignment
+//
+//  Class with the main controller of the app, where the sections of Viaplay are shown
 //
 //  Created by Esteban Pavez on 2020-02-17.
 //  Copyright © 2020 Esteban Pavez. All rights reserved.
@@ -19,8 +21,6 @@ class ViaplaySectionsController: UIViewController {
 
     /// View model to fill the UI of the controller
     var sectionsViaplayViewModel: ViaplaySectionsViewModel!
-    /// Cell ID of the table view cell
-    let cellId = "viaplaySectionsTableCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,13 +50,25 @@ extension ViaplaySectionsController: UITableViewDelegate, UITableViewDataSource 
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? ViaplaySectionsTableCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Table.cellSection, for: indexPath) as? ViaplaySectionsTableCell
 
         guard let cellSection = cell, let viewModel = sectionsViaplayViewModel else { return UITableViewCell() }
         
         cellSection.viaplaySection = viewModel.sectionsViaplay[indexPath.row]
 
         return cellSection
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: Constants.Storyboard.main, bundle: nil)
+        let viaplayCategoriesController = storyBoard.instantiateViewController(withIdentifier:
+            Constants.Controller.viaplayCategoriesController) as? ViaplayCategoriesController
+
+        guard let categoriesController = viaplayCategoriesController else { return }
+
+        categoriesController.urlcategoryService = sectionsViaplayViewModel.sectionsViaplay[indexPath.row].urlSection
+
+        self.present(categoriesController, animated: true, completion: nil)
     }
 
 }
