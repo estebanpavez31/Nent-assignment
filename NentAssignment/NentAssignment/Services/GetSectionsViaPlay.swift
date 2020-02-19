@@ -19,29 +19,27 @@ class GetSectionsViaPlay: NSObject, URLSessionDelegate {
     /// - Parameter onCompletion: Sections object with its data
     func getSections(urlService: String = URLServices.urlAPIViaPlay,
                      onCompletion: @escaping (SectionsViaplayModel?) -> Void) {
-        let baseURL = urlService
 
-        let urlComponents = URLComponents(string: baseURL)!
+        let urlComponents = URLComponents(string: urlService)!
 
         // Do service call via HTTP Get request
         UtilServices.makeHTTPGetRequest(self, urlComponents: urlComponents,
                                         onCompletion: { data, _ in
-                                            onCompletion(self.parsingJSON(data: data))
+                                            onCompletion(self.parsingJSON(data: data, url: urlService))
         })
     }
 
     /// Parse JSON obtained from service call to transform it to a Sections Object
     /// - Parameter data: Data with json response
-    func parsingJSON(data: Data?) -> SectionsViaplayModel? {
-        guard data != nil else {
-            return nil
-        }
+    func parsingJSON(data: Data?, url: String) -> SectionsViaplayModel? {
+
+        guard let savedData = Util.validatePersistanceSections(data: data, url: url) else { return nil }
 
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
 
         do {
-            let sections = try decoder.decode(SectionsViaplayModel.self, from: data ?? Data())
+            let sections = try decoder.decode(SectionsViaplayModel.self, from: savedData)
 
             Logger.log("Parsing Sections Succeded")
 

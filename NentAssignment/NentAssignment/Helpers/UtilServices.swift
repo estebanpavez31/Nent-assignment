@@ -32,7 +32,7 @@ struct UtilServices {
                 // check connection error
                 Logger.log("Connection error")
 
-                onCompletion(Data(), nil)
+                onCompletion(nil, nil)
                 return
             }
 
@@ -43,7 +43,7 @@ struct UtilServices {
                 Logger.log("response = \(String(describing: response))")
 
                 DispatchQueue.main.async {
-                    onCompletion(Data(), NSError(domain: "", code: httpStatus.statusCode, userInfo: [:]))
+                    onCompletion(nil, NSError(domain: "", code: httpStatus.statusCode, userInfo: [:]))
                 }
             } else {
                 DispatchQueue.main.async {

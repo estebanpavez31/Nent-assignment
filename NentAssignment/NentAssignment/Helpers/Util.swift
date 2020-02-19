@@ -49,4 +49,25 @@ struct Util {
         labelError.isHidden = false
         refreshButton.isHidden = false
     }
+
+    /// Validates and obtains the saved data response from the service to use it offline
+    /// - Parameters:
+    ///   - data: Data response from the service
+    ///   - url: URL form the first service call
+    static func validatePersistanceSections(data: Data?, url: String) -> Data? {
+        let defaults = UserDefaults.standard
+        let sectionsKey = "sections"
+
+        guard url == URLServices.urlAPIViaPlay else { return data }
+        if data == nil {
+            if let savedData = defaults.data(forKey: sectionsKey) {
+                return savedData
+            } else {
+                return nil
+            }
+        } else {
+            defaults.set(data, forKey: sectionsKey)
+            return data
+        }
+    }
 }
