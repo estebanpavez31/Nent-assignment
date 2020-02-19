@@ -27,11 +27,15 @@ struct ViaplayProductsViewModel {
     /// - Parameter sections: Model with the data to fill the UI
     func validateModel(sections: SectionsViaplayModel) -> [ViaplayProductModel] {
         guard let embedded = sections.embedded else { return [] }
-        guard let block = embedded.viaplayBlocks else { return [] }
-        guard let products = block[0].embedded else { return [] }
-        guard let viaPlayProducts = products.viaplayProducts else { return [] }
-
-        return viaPlayProducts
+        guard let blocks = embedded.viaplayBlocks else { return [] }
+        
+        if !blocks.isEmpty {
+            guard let products = blocks[0].embedded else { return [] }
+            guard let viaPlayProducts = products.viaplayProducts else { return [] }
+            return viaPlayProducts
+        } else {
+            return []
+        }
     }
 
     /// Generates the array with the list of products shown in the last scene
