@@ -28,6 +28,8 @@
 		1DB8ECC423FC6B3500CA48D4 /* ViaplayProductsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECC323FC6B3500CA48D4 /* ViaplayProductsController.swift */; };
 		1DB8ECC623FC6C4400CA48D4 /* ViaplayProductTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECC523FC6C4400CA48D4 /* ViaplayProductTableCell.swift */; };
 		1DB8ECC823FC70D800CA48D4 /* ViaplayProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECC723FC70D800CA48D4 /* ViaplayProductsViewModel.swift */; };
+		1DB8ECCA23FD455600CA48D4 /* FixtureConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECC923FD455600CA48D4 /* FixtureConstants.swift */; };
+		1DB8ECCC23FD46DE00CA48D4 /* ViaplaySection-fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECCB23FD46DE00CA48D4 /* ViaplaySection-fixture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		1DB8ECC323FC6B3500CA48D4 /* ViaplayProductsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViaplayProductsController.swift; sourceTree = "<group>"; };
 		1DB8ECC523FC6C4400CA48D4 /* ViaplayProductTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViaplayProductTableCell.swift; sourceTree = "<group>"; };
 		1DB8ECC723FC70D800CA48D4 /* ViaplayProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViaplayProductsViewModel.swift; sourceTree = "<group>"; };
+		1DB8ECC923FD455600CA48D4 /* FixtureConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureConstants.swift; sourceTree = "<group>"; };
+		1DB8ECCB23FD46DE00CA48D4 /* ViaplaySection-fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViaplaySection-fixture.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				1DB8EC9923FB205C00CA48D4 /* NentAssignmentTests.swift */,
+				1DB8ECCB23FD46DE00CA48D4 /* ViaplaySection-fixture.swift */,
 				1DB8EC9B23FB205C00CA48D4 /* Info.plist */,
 			);
 			path = NentAssignmentTests;
@@ -185,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				1DB8ECB023FB403900CA48D4 /* Constants.swift */,
+				1DB8ECC923FD455600CA48D4 /* FixtureConstants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -297,6 +303,7 @@
 				1DB8ECC423FC6B3500CA48D4 /* ViaplayProductsController.swift in Sources */,
 				1DB8ECAB23FB3F9200CA48D4 /* GetSectionsViaPlay.swift in Sources */,
 				1DB8ECBB23FBFDAA00CA48D4 /* ViaplaySectionsViewModel.swift in Sources */,
+				1DB8ECCA23FD455600CA48D4 /* FixtureConstants.swift in Sources */,
 				1DB8ECB923FBF91100CA48D4 /* ViaplayProduct.swift in Sources */,
 				1DB8EC8323FB205900CA48D4 /* AppDelegate.swift in Sources */,
 				1DB8ECB123FB403900CA48D4 /* Constants.swift in Sources */,
@@ -314,6 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DB8ECCC23FD46DE00CA48D4 /* ViaplaySection-fixture.swift in Sources */,
 				1DB8EC9A23FB205C00CA48D4 /* NentAssignmentTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

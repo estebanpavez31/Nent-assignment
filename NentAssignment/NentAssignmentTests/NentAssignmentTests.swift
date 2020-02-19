@@ -19,16 +19,76 @@ class NentAssignmentTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    // MARK: - Sections View Model Unit Tests
+
+    func testHeaderViaplaySectionsViewModel() {
+        let sections = SectionsViaplayModel.fixture()
+        let sectionsViewModel = ViaplaySectionsViewModel(sections: sections)
+
+        XCTAssertEqual(sections.title, sectionsViewModel.titleViaplay)
+        XCTAssertEqual(sections.description, sectionsViewModel.descriptionViaplay)
     }
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testCountSectionsCategoriesViewModel() {
+        let sections = SectionsViaplayModel.fixture()
+        let sectionsViewModel = ViaplaySectionsViewModel(sections: sections)
+
+        XCTAssertEqual(sectionsViewModel.sectionsViaplay.count, 3)
+        XCTAssertEqual(sectionsViewModel.categoriesViaplay.count, 3)
+    }
+
+    func testNameSectionCategoriesViewModel() {
+        let sections = SectionsViaplayModel.fixture()
+        let sectionsViewModel = ViaplaySectionsViewModel(sections: sections)
+
+        XCTAssertEqual(sectionsViewModel.sectionsViaplay[0].title, "Serier")
+        XCTAssertEqual(sectionsViewModel.categoriesViaplay[0].title, "Alla serier")
+    }
+
+    func testTypeSectionCategoriesViewModel() {
+        let sections = SectionsViaplayModel.fixture()
+        let sectionsViewModel = ViaplaySectionsViewModel(sections: sections)
+
+        XCTAssertEqual(sectionsViewModel.sectionsViaplay[0].type, "vod")
+        XCTAssertEqual(sectionsViewModel.categoriesViaplay[0].type, "vod")
+    }
+
+    func testURLrefactorSectionCategoriesViewModel() {
+        let sections = SectionsViaplayModel.fixture()
+        let sectionsViewModel = ViaplaySectionsViewModel(sections: sections)
+
+        XCTAssertEqual(sectionsViewModel.sectionsViaplay[0].urlSection, "https://content.viaplay.se/ios-se/serier")
+        XCTAssertEqual(sectionsViewModel.categoriesViaplay[0].urlSection, "https://content.viaplay.se/ios-se/serier/samtliga")
+    }
+
+    // MARK: - Products View Model Unit Tests
+
+    func testHeaderViaplayProductsViewModel() {
+        let sections = SectionsViaplayModel.fixture()
+        let productsViewModel = ViaplayProductsViewModel(sections: sections)
+
+        XCTAssertEqual(sections.description, productsViewModel.descriptionViaplay)
+    }
+
+    func testCountProductsViewModel() {
+        let sections = SectionsViaplayModel.fixture()
+        let productsViewModel = ViaplayProductsViewModel(sections: sections)
+
+        XCTAssertEqual(productsViewModel.productsList.count, 1)
+    }
+
+    func testProductTitleViewModel() {
+        let sections = SectionsViaplayModel.fixture()
+        let productsViewModel = ViaplayProductsViewModel(sections: sections)
+
+        XCTAssertEqual(productsViewModel.productsList[0].title, "Grey's Anatomy")
+    }
+
+    func testProductSynopsisTypeViewModel() {
+        let sections = SectionsViaplayModel.fixture()
+        let productsViewModel = ViaplayProductsViewModel(sections: sections)
+
+        XCTAssertEqual(productsViewModel.productsList[0].synopsis, "Flerfaldigt prisbelönad och högt rankad dramaserie. Läkarna på Seattle Grace Hospital hanterar dagligen liv och död medan de finner tröst, vänskap och romantik hos varandra.")
     }
 
 }
