@@ -30,6 +30,7 @@
 		1DB8ECC823FC70D800CA48D4 /* ViaplayProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECC723FC70D800CA48D4 /* ViaplayProductsViewModel.swift */; };
 		1DB8ECCA23FD455600CA48D4 /* FixtureConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECC923FD455600CA48D4 /* FixtureConstants.swift */; };
 		1DB8ECCC23FD46DE00CA48D4 /* ViaplaySection-fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB8ECCB23FD46DE00CA48D4 /* ViaplaySection-fixture.swift */; };
+		1DFCE18B23FD9905009B93B2 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFCE18A23FD9905009B93B2 /* Util.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		1DB8ECC723FC70D800CA48D4 /* ViaplayProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViaplayProductsViewModel.swift; sourceTree = "<group>"; };
 		1DB8ECC923FD455600CA48D4 /* FixtureConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureConstants.swift; sourceTree = "<group>"; };
 		1DB8ECCB23FD46DE00CA48D4 /* ViaplaySection-fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViaplaySection-fixture.swift"; sourceTree = "<group>"; };
+		1DFCE18A23FD9905009B93B2 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 			children = (
 				1DB8ECAD23FB400500CA48D4 /* UtilServices.swift */,
 				1DB8ECB223FB406F00CA48D4 /* Logger.swift */,
+				1DFCE18A23FD9905009B93B2 /* Util.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				1DB8EC8323FB205900CA48D4 /* AppDelegate.swift in Sources */,
 				1DB8ECB123FB403900CA48D4 /* Constants.swift in Sources */,
 				1DB8EC8523FB205900CA48D4 /* SceneDelegate.swift in Sources */,
+				1DFCE18B23FD9905009B93B2 /* Util.swift in Sources */,
 				1DB8ECC623FC6C4400CA48D4 /* ViaplayProductTableCell.swift in Sources */,
 				1DB8ECB723FBF8EE00CA48D4 /* ViaplaySection.swift in Sources */,
 				1DB8ECA923FB3F2800CA48D4 /* URLServices.swift in Sources */,

@@ -18,6 +18,14 @@ class ViaplaySectionsController: UIViewController {
     @IBOutlet weak var lblDescriptionViaplay: UILabel!
     /// Table view with the list of sections
     @IBOutlet weak var tableViewSections: UITableView!
+    /// View with an activity indicator used when is loading the products
+    @IBOutlet weak var viewLoading: UIView!
+    /// Activity indicator inside the loading view
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    /// Button that let refreshes the view
+    @IBOutlet weak var btnRefresh: UIButton!
+    /// Label that shows the service error
+    @IBOutlet weak var lblServiceError: UILabel!
 
     /// View model to fill the UI of the controller
     var sectionsViaplayViewModel: ViaplaySectionsViewModel!
@@ -25,12 +33,28 @@ class ViaplaySectionsController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        GetSectionsViaPlay.sharedInstance.getSections { sectionsResponse in
-            guard let sections = sectionsResponse else { return }
+        getSections()
+    }
 
-            self.sectionsViaplayViewModel = ViaplaySectionsViewModel(sections: sections)
-            self.fillUI()
-            self.tableViewSections.reloadData()
+    /// Call the service to get the list of sections
+    func getSections() {
+        Util.showActivityIndicator(controller: self, view: viewLoading, activityIndicator: activityIndicator,
+        labelError: lblServiceError, refreshButton: btnRefresh)
+
+        GetSectionsViaPlay.sharedInstance.getSections { sectionsResponse in
+            DispatchQueue.main.async {
+                guard let sections = sectionsResponse else {
+                    Util.showError(controller: self, view: self.viewLoading, activityIndicator: self.activityIndicator,
+                                   labelError: self.lblServiceError, refreshButton: self.btnRefresh)
+
+                    return
+                }
+
+                self.sectionsViaplayViewModel = ViaplaySectionsViewModel(sections: sections)
+                self.fillUI()
+                self.tableViewSections.reloadData()
+                Util.hideActivityIndicator(controller: self, view: self.viewLoading)
+            }
         }
     }
 
@@ -38,6 +62,13 @@ class ViaplaySectionsController: UIViewController {
     func fillUI() {
         lblTitleViaplay.text = sectionsViaplayViewModel.titleViaplay
         lblDescriptionViaplay.text = sectionsViaplayViewModel.descriptionViaplay
+    }
+
+
+    /// Call the service again and refresh the view
+    /// - Parameter sender: Button that realizes the action
+    @IBAction func refreshView(_ sender: Any) {
+        getSections()
     }
 
 }

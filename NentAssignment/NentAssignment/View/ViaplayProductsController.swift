@@ -18,7 +18,13 @@ class ViaplayProductsController: UIViewController {
     /// Table view with the list of sections
     @IBOutlet weak var tableViewProducts: UITableView!
     /// View with an activity indicator used when is loading the products
-    @IBOutlet weak var activityIndicator: UIView!
+    @IBOutlet weak var viewLoading: UIView!
+    /// Activity indicator inside the loading view
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    /// Button that let refreshes the view
+    @IBOutlet weak var btnRefresh: UIButton!
+    /// Label that shows the service error
+    @IBOutlet weak var lblServiceError: UILabel!
 
     /// View model to fill the UI of the controller
     var productsViaplayViewModel: ViaplayProductsViewModel!
@@ -28,15 +34,28 @@ class ViaplayProductsController: UIViewController {
     var currentSectionTitle: String!
 
     override func viewWillAppear(_ animated: Bool) {
-        showActivityIndicator()
-        
-        GetSectionsViaPlay.sharedInstance.getSections(urlService: urlcategoryService) { categoriesResponse in
-            guard let category = categoriesResponse else { return }
+        getProducts()
+    }
 
-            self.productsViaplayViewModel = ViaplayProductsViewModel(sections: category)
-            self.fillUI()
-            self.tableViewProducts.reloadData()
-            self.hideActivityIndicator()
+    /// Call the service to get the list of products
+    func getProducts() {
+        Util.showActivityIndicator(controller: self, view: viewLoading, activityIndicator: activityIndicator,
+                                   labelError: lblServiceError, refreshButton: btnRefresh)
+
+        GetSectionsViaPlay.sharedInstance.getSections(urlService: urlcategoryService) { categoriesResponse in
+            DispatchQueue.main.async {
+
+                guard let category = categoriesResponse else {
+                    Util.showError(controller: self, view: self.viewLoading, activityIndicator: self.activityIndicator,
+                                   labelError: self.lblServiceError, refreshButton: self.btnRefresh)
+                    return
+                }
+
+                self.productsViaplayViewModel = ViaplayProductsViewModel(sections: category)
+                self.fillUI()
+                self.tableViewProducts.reloadData()
+                Util.hideActivityIndicator(controller: self, view: self.viewLoading)
+            }
         }
     }
 
@@ -46,22 +65,17 @@ class ViaplayProductsController: UIViewController {
         lblDescriptionViaplay.text = productsViaplayViewModel.descriptionViaplay
     }
 
-    /// Shows in the screen the activity indicator while the products are loading
-    func showActivityIndicator() {
-        self.view.bringSubviewToFront(activityIndicator)
+    /// Refresh the view recalling the services
+    /// - Parameter sender: Button that realizes the action
+    @IBAction func refreshView(_ sender: Any) {
+        getProducts()
     }
 
-    /// Hides the activity indicator when the products are already loaded
-    func hideActivityIndicator() {
-        self.view.sendSubviewToBack(activityIndicator)
-    }
-
-    /// Closes the scene and returns to the list of sectiones
+    /// Closes the scene and returns to the list of categories
     /// - Parameter sender: Button that realizes the action
     @IBAction func closeView(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-
 }
 
 extension ViaplayProductsController: UITableViewDelegate, UITableViewDataSource {
